@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <title>formulaire</title>
 </head>
-<body>
-    <form action="/myfirstapp/bonjour/" method="get">
+{% extends "myfirstapp/main.html" %}
+
+{% block title %}
+Mon formulaire
+{% endblock %}
+
+{% block content %}
+<form action="/myfirstapp/bonjour/" method="get">
     {% csrf_token %}
 
     <label for="nom">Nom :</label>
@@ -25,5 +31,6 @@
 
     <input type="submit" value="envoyer"/>
 </form>
+{% endblock %}
 </body>
 </html>
