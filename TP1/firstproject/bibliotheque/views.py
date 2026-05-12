@@ -62,3 +62,13 @@ def traitement(request):
             "bibliotheque/ajout.html",
             {"form": lform}
         )
+
+def all(request):
+
+    liste = list(models.Livre.objects.all())
+
+    return render(
+        request,
+        "bibliotheque/index.html",
+        {"liste": liste}
+    )
